@@ -112,7 +112,7 @@ void UDPServer::setClientSockLength()
  */
 int UDPServer::receiveRequest()
 {
-       	int noOfCharacters = recvfrom(serverSocket,&segment,sizeof(segment),0,(struct sockaddr *)&clientAddress,&clientSockLen);	       	
+    int noOfCharacters = recvfrom(serverSocket,&segment,sizeof(segment),0,(struct sockaddr *)&clientAddress,&clientSockLen);	       	
 	if (noOfCharacters < 0) 
 	{
 		displayError("There is some problem in receiving the request!");

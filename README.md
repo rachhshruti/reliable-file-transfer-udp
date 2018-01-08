@@ -2,15 +2,24 @@
 
 Implemented sliding window protocol for providing flow control, congestion control and adaptive retransmission of packets to make User Datagram Protocol (UDP) reliable.
 
-# Requirements
-
-- Linux operating system
-
 # Running the code
 
-The code can be compiled by typing the following command in the terminal: make
+## Creating and configuring virtual machines
+	
+	vagrant up
+   
+   This will boot both the server and client machines
 
-## To run the UDPServer:
+## SSH into virtual machines
+	
+	vagrant ssh reliableUDPServer
+	vagrant ssh reliableUDPClient
+   
+## Compile the code
+	
+	make
+
+## To run reliable UDP server:
 
   `./Server port advertised_window`
 
@@ -20,7 +29,7 @@ port: port number to be used for communication
 
 advertised_window: the number of bytes server is allowed to send before waiting for an acknowldgement
 
-## To run the UDPClient:
+## To run reliable UDP client:
 
   `./Client server_host_name port file_name advertised_window`
 
@@ -31,3 +40,13 @@ port and advertised_window: same as that of the server
 server_host_name: host name of the server
 
 file_name: the name of the file requested by the client
+
+Once the code is run successfully, you will find the file that the client requested for in the ReliableUDPClient folder.
+
+# Screenshots
+
+<img src="https://github.com/rachhshruti/reliable-file-transfer-udp/blob/master/images/reliable-file-transfer-udp-output.png" width="1000" height="600" align="center"/>
+
+# References
+
+[Computer Networking-Top-Down-Approach](https://www.amazon.com/Computer-Networking-Top-Down-Approach-6th/dp/0132856204)
